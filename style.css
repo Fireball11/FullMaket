@@ -60,7 +60,7 @@ body {
     color: #7E7E82;
 }
 
-span {
+span:not(.prices__slide span) {
     font-family: "TTLakes";
     font-weight: 600;
     
@@ -121,6 +121,7 @@ span {
 
 .main {
     padding-top: 24px;
+    margin-bottom: 60px;
 }
 
 /* 
@@ -140,7 +141,6 @@ span {
     display: flex;
     padding-left: 16px;
     margin-bottom: 24px;
-    overflow: scroll;
 }
 
 .slider__slide {
@@ -182,7 +182,7 @@ span {
 }
 
 /* 
-    Глобальный слайдер
+Глобальный слайдер
 */
 
 .slider__header{
@@ -195,10 +195,19 @@ span {
 
 .slider {
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 32px;
+    scrollbar-width: 1px;
 }
+
+/* .slider::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+} */
+
 .slider__wraper {
-    display: inline-flex;
-    /* flex-wrap: nowrap; */
+    display: flex;
+    width: min-content;
 }
 
 .slide {
@@ -211,6 +220,8 @@ span {
     background-color: #FFFFFF;
     border: 1px solid #eaeaea;
     border-radius: 6px;
+
+    scroll-snap-align: start;
 }
 
 .slide__button {
@@ -254,22 +265,60 @@ span {
     flex-direction: column;
 }
 
-.prices__slide button {
-    width: 120px;
-    height: 32px;
-    position: relative;
-    left: 65%;
-    bottom: 15%;
 
+
+.prices__button {
+    width: max-content;
+    padding: 4px;
+    padding-left: 12px;
+    
+    position: relative;
+    left: 50%;
+    bottom: 22%;
+
+    background-color: #FF3E79;
+    border-radius: 16px;
+    color: white;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 12px;
-    color: white;
-    background-color: #FF3E79;
+    line-height: 24px;
+}
 
-    align-items: center;
-    
+.prices__button span::after {
+    content: url(img/dropdown-white.svg);
+    margin-left: 16px;
+    margin-right: 12px;
 }
 
 .prices__slide .h3:not(:first-child) {
     margin-top: 16px;
+}
+
+.prices__text {
+    padding: 0 16px;
+}
+
+.commerce {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.commerce span::after {
+    content: url(img/dropdown.svg);
+    margin-left: 10px;
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    
+    color: #7E7E82;
+}
+
+.footer p {
+    text-align: center;
+    margin-bottom: 16px;
 }
