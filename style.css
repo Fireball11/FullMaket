@@ -322,3 +322,13 @@ span:not(.prices__slide span) {
     text-align: center;
     margin-bottom: 16px;
 }
+
+@media screen and (min-width: 768px) {
+    .navbar__logo::after {
+        content: " "
+    }
+    .button__menu::after {
+        content: url(img/divider.svg); /* ЗАМЕНИТЬ НА СТИЛИ*/
+        margin-left: 16px;
+    }
+}
