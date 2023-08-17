@@ -100,10 +100,9 @@ span:not(.prices__slide span) {
     margin: 0 auto;
 }
 
-.navbar__button_adaptive {
+.adaptive-block {
     display: none;
 }
-
 .navbar__logo {
     display: flex;
     margin-right: 16px;
@@ -327,7 +326,15 @@ span:not(.prices__slide span) {
     .navbar__logo::after {
         content: " "
     }
-    .button__menu::after {
+    .navbar__logo::before {
+        content: url(img/divider.svg); /* ЗАМЕНИТЬ НА СТИЛИ*/
+        margin-right: 16px;
+    }
+    .adaptive-block {
+        display: flex;
+        margin-right: 16px;
+    }
+    .adaptive-block::after {
         content: url(img/divider.svg); /* ЗАМЕНИТЬ НА СТИЛИ*/
         margin-left: 16px;
     }
